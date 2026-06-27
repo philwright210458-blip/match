@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Memory Zone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Screen 0: Splash -->
+  <section class="screen" id="screen-splash">
+    <div class="splash-inner">
+      <img class="splash-hero" src="Header%202.png" alt="Memory Zone">
+      <p class="splash-tap">✨ Tap anywhere to start ✨</p>
+    </div>
+  </section>
+
+  <!-- Screen 1: Profile Picker -->
+  <section class="screen" id="screen-profiles">
+    <div class="screen-inner">
+      <div class="mz-logo"><span class="mz-m">M</span><span class="mz-e">e</span><span class="mz-mo">m</span><span class="mz-o">o</span><span class="mz-r">r</span><span class="mz-y">y</span> <span class="mz-z">Z</span><span class="mz-on">o</span><span class="mz-ne">n</span><span class="mz-e2">e</span></div>
+      <p class="logo-sub">Who's playing?</p>
+      <div id="profileList" class="profile-grid"></div>
+      <button id="addPlayerBtn" class="add-player-btn" type="button">＋ Add New Player</button>
+      <div id="leaderboard" class="leaderboard hidden"></div>
+      <div id="addPlayerForm" class="add-player-form hidden">
+        <input id="playerNameInput" class="name-input" type="text"
+               placeholder="Type your name..." maxlength="20" autocomplete="off" />
+        <p class="avatar-label">Pick your character:</p>
+        <div id="avatarGrid" class="avatar-grid"></div>
+        <button id="savePlayerBtn" class="primary-btn" type="button">Let's Play! 🎉</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 2: Setup -->
+  <section class="screen" id="screen-setup">
+    <div class="screen-inner">
+      <div class="mz-logo"><span class="mz-m">M</span><span class="mz-e">e</span><span class="mz-mo">m</span><span class="mz-o">o</span><span class="mz-r">r</span><span class="mz-y">y</span> <span class="mz-z">Z</span><span class="mz-on">o</span><span class="mz-ne">n</span><span class="mz-e2">e</span></div>
+      <div id="setupGreeting" class="setup-greeting-pill"></div>
+      <div class="setup-hero-wrap">
+        <button id="categoryPrevBtn" class="hero-arrow-btn" type="button" aria-label="Previous category">◀</button>
+        <div class="setup-hero-card" id="setupHeroCard" aria-live="polite">
+          <div class="hero-emoji" id="heroEmoji"></div>
+          <div class="hero-name" id="heroName"></div>
+          <div class="hero-desc" id="heroDesc"></div>
+        </div>
+        <button id="categoryNextBtn" class="hero-arrow-btn" type="button" aria-label="Next category">▶</button>
+      </div>
+      <div class="hero-dots" id="heroDots"></div>
+      <div class="level-pills-row" id="levelBtns"></div>
+      <button id="playBtn" class="primary-btn setup-play-btn" type="button">▶ Play!</button>
+      <div class="setup-footer">
+        <button id="toggleMuteBtn" class="icon-btn" type="button" aria-label="Toggle sound">🔊</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 3: Game -->
+  <section class="screen" id="screen-game">
+    <div class="screen-inner game-screen-inner">
+      <div class="game-top-bar">
+        <div class="mz-logo mz-logo--small"><span class="mz-m">M</span><span class="mz-e">e</span><span class="mz-mo">m</span><span class="mz-o">o</span><span class="mz-r">r</span><span class="mz-y">y</span> <span class="mz-z">Z</span><span class="mz-on">o</span><span class="mz-ne">n</span><span class="mz-e2">e</span></div>
+        <div class="status-row">
+          <div class="status-pill">Round <span id="roundValue">0</span>/<span id="roundTotalValue">3</span></div>
+          <div class="status-pill">Lives <span id="livesDisplay"></span></div>
+          <div class="status-pill" id="timePill">⏱ <span id="timeValue">2:00</span></div>
+          <div class="streak-pill" id="streakPill">✨ 0</div>
+        </div>
+        <button id="quitBtn" class="quit-btn" type="button" aria-label="Quit to menu">✕</button>
+      </div>
+      <div class="timer-wrap" aria-label="Game countdown timer">
+        <div class="timer-bar" id="timerBar"></div>
+      </div>
+      <div class="message-area" id="messageArea">Get ready!</div>
+      <div class="game-playfield" id="playfield">
+        <div class="pane-label" id="boardLabel">Your board</div>
+        <div class="board-frame" id="boardFrame">
+          <div id="targetBoard" class="target-board"></div>
+        </div>
+        <hr class="game-divider">
+        <div class="pane-label" id="currentPaneLabel">Current card</div>
+        <div class="single-card-area" id="singleCardArea">
+          <div id="singleCard" class="single-card placeholder-card">?</div>
+          <div id="swipeHint" class="swipe-hint hidden">⬅ No Match &nbsp;|&nbsp; Match ➡</div>
+        </div>
+        <div class="controls-row" id="controlsRow">
+          <button id="rejectBtn" class="choice-btn nomatch-btn"
+                  type="button" aria-label="No Match">✕ No Match</button>
+          <button id="acceptBtn" class="choice-btn match-btn"
+                  type="button" aria-label="Match">✓ Match</button>
+        </div>
+        <div id="keyboardHelp" class="keyboard-help" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 4: Round Complete -->
+  <section class="screen screen-reward" id="screen-round-complete">
+    <div class="screen-inner screen-center">
+      <div class="mz-logo"><span class="mz-m">M</span><span class="mz-e">e</span><span class="mz-mo">m</span><span class="mz-o">o</span><span class="mz-r">r</span><span class="mz-y">y</span> <span class="mz-z">Z</span><span class="mz-on">o</span><span class="mz-ne">n</span><span class="mz-e2">e</span></div>
+      <hr class="reward-divider">
+      <div class="reward-emoji">⭐</div>
+      <h2 id="roundCompleteTitle" class="reward-title"></h2>
+      <p id="roundCompleteText" class="reward-text"></p>
+      <div id="roundStars" class="stars-row"></div>
+      <p class="reward-hint">Tap or wait for next round…</p>
+    </div>
+  </section>
+
+  <!-- Screen 5: Game Won -->
+  <section class="screen screen-reward" id="screen-won">
+    <div class="confetti-container" id="confettiContainer"></div>
+    <div class="screen-inner screen-center">
+      <div class="mz-logo"><span class="mz-m">M</span><span class="mz-e">e</span><span class="mz-mo">m</span><span class="mz-o">o</span><span class="mz-r">r</span><span class="mz-y">y</span> <span class="mz-z">Z</span><span class="mz-on">o</span><span class="mz-ne">n</span><span class="mz-e2">e</span></div>
+      <hr class="reward-divider">
+      <div class="reward-emoji">🏆</div>
+      <h2 id="wonTitle" class="reward-title"></h2>
+      <p id="wonText" class="reward-text"></p>
+      <div id="wonStars" class="stars-row"></div>
+      <div class="reward-buttons">
+        <button id="playAgainBtn" class="primary-btn" type="button">Play Again! 🔥</button>
+        <button id="changeLevelBtn" class="secondary-btn" type="button">Change Level</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 6: Game Over -->
+  <section class="screen screen-reward" id="screen-gameover">
+    <div class="screen-inner screen-center">
+      <div class="mz-logo"><span class="mz-m">M</span><span class="mz-e">e</span><span class="mz-mo">m</span><span class="mz-o">o</span><span class="mz-r">r</span><span class="mz-y">y</span> <span class="mz-z">Z</span><span class="mz-on">o</span><span class="mz-ne">n</span><span class="mz-e2">e</span></div>
+      <hr class="reward-divider">
+      <div class="reward-emoji">💪</div>
+      <h2 id="gameoverTitle" class="reward-title"></h2>
+      <p id="gameoverText" class="reward-text"></p>
+      <div id="gameoverStars" class="stars-row"></div>
+      <button id="tryAgainBtn" class="primary-btn" type="button">Try Again! 💪</button>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
