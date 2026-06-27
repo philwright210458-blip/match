@@ -315,14 +315,13 @@ button { cursor: pointer; }
 
 .add-player-btn {
   width: 100%; padding: 14px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.2);
   border: 2.5px dashed rgba(255,255,255,0.5);
   border-radius: 16px;
   font-size: 1rem; font-weight: 700;
   color: rgba(255,255,255,0.9);
   margin-bottom: 16px;
   transition: background 0.14s ease, border-color 0.14s ease;
-  backdrop-filter: blur(6px);
 }
 .add-player-btn:hover { background: rgba(255,255,255,0.2); border-color: #a78bfa; }
 
@@ -367,11 +366,10 @@ button { cursor: pointer; }
 
 /* ─── Leaderboard ────────────────────────────────────────────── */
 .leaderboard {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.18);
   border: 1.5px solid rgba(255,255,255,0.25);
   border-radius: 20px; padding: 16px 18px; margin-bottom: 16px;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(8px);
 }
 .leaderboard-title { font-weight: 800; font-size: 0.95rem; color: rgba(255,255,255,0.9); margin: 0 0 12px; }
 .leaderboard-row {
@@ -388,14 +386,13 @@ button { cursor: pointer; }
 /* ─── Setup Screen ───────────────────────────────────────────── */
 .setup-greeting-pill {
   display: flex; align-items: center; gap: 10px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.25);
   border: 1.5px solid rgba(255,255,255,0.3);
   border-radius: 999px;
   padding: 8px 18px;
   font-weight: 700; font-size: 0.95rem;
   margin-bottom: 14px;
   box-shadow: 0 4px 12px rgba(10,15,60,0.2);
-  backdrop-filter: blur(8px);
   flex-wrap: wrap;
   color: #fff;
 }
@@ -433,13 +430,12 @@ button { cursor: pointer; }
   width: 48px; height: 48px; flex-shrink: 0;
   border-radius: 999px;
   border: 2.5px solid rgba(255,255,255,0.5);
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.25);
   font-size: 1.1rem; font-weight: 900;
   color: #fff;
   display: grid; place-items: center;
   box-shadow: 0 4px 12px rgba(10,15,60,0.3);
   transition: transform 0.12s ease, background 0.12s ease;
-  backdrop-filter: blur(6px);
 }
 .hero-arrow-btn:hover { transform: scale(1.1); background: rgba(255,255,255,0.28); }
 
@@ -454,7 +450,7 @@ button { cursor: pointer; }
 .level-pills-row { display: flex; gap: 8px; margin-bottom: 14px; }
 .level-pill {
   flex: 1; padding: 12px 6px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.2);
   border: 2.5px solid rgba(255,255,255,0.25);
   border-radius: 16px;
   font-family: 'Fredoka One', sans-serif; font-size: 0.88rem;
@@ -462,7 +458,7 @@ button { cursor: pointer; }
   text-align: center; cursor: pointer;
   transition: border-color 0.14s ease, background 0.14s ease, transform 0.12s ease;
   box-shadow: 0 3px 10px rgba(10,15,60,0.2);
-  line-height: 1.4; backdrop-filter: blur(6px);
+  line-height: 1.4;
 }
 .level-pill:hover { transform: translateY(-2px); background: rgba(255,255,255,0.2); }
 .level-pill.selected {
@@ -497,22 +493,20 @@ button { cursor: pointer; }
 
 .secondary-btn {
   padding: 14px 20px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.25);
   color: rgba(255,255,255,0.9);
   border: 2px solid rgba(255,255,255,0.35);
   border-radius: 16px; font-weight: 700;
-  backdrop-filter: blur(6px);
   transition: transform 0.14s ease, background 0.14s ease;
 }
 .secondary-btn:hover { transform: translateY(-1px); background: rgba(255,255,255,0.25); }
 
 .icon-btn {
   width: 52px; height: 52px; font-size: 1.35rem;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.25);
   border: 1.5px solid rgba(255,255,255,0.3);
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(10,15,60,0.25);
-  backdrop-filter: blur(6px);
   transition: transform 0.14s ease, box-shadow 0.14s ease;
 }
 .icon-btn:hover { transform: translateY(-1px); background: rgba(255,255,255,0.25); }
@@ -525,12 +519,11 @@ button { cursor: pointer; }
 .status-pill {
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.25);
   border: 1.5px solid rgba(255,255,255,0.3);
   font-weight: 700; font-size: 0.82rem;
   font-family: 'Fredoka One', sans-serif;
   color: #fff;
-  backdrop-filter: blur(8px);
   box-shadow: 0 3px 10px rgba(10,15,60,0.2);
   white-space: nowrap;
 }
@@ -560,13 +553,12 @@ button { cursor: pointer; }
 .message-area {
   min-height: 32px; padding: 4px 14px;
   border-radius: 14px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.2);
   border: 1.5px solid rgba(255,255,255,0.2);
   display: flex; align-items: center; justify-content: center; text-align: center;
   font-family: 'Fredoka One', sans-serif; font-size: 0.88rem;
   margin-bottom: 4px;
   color: #fff;
-  backdrop-filter: blur(6px);
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
   flex-shrink: 0;
 }
@@ -900,12 +892,11 @@ button { cursor: pointer; }
 .streak-pill {
   padding: 6px 10px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(255,214,0,0.25), rgba(255,144,0,0.25));
+  background: linear-gradient(135deg, rgba(255,214,0,0.35), rgba(255,144,0,0.35));
   border: 1.5px solid rgba(255,214,0,0.5);
   font-weight: 700; font-size: 0.82rem;
   font-family: 'Fredoka One', sans-serif;
   color: #ffd600;
-  backdrop-filter: blur(8px);
   box-shadow: 0 3px 10px rgba(10,15,60,0.2), 0 0 12px rgba(255,214,0,0.2);
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -1028,6 +1019,27 @@ button { cursor: pointer; }
   cursor: pointer;
 }
 .quit-btn:hover { background: rgba(255,82,82,0.3); color: #fff; border-color: var(--red); }
+
+/* Vertically centre the profile and setup screens on large viewports */
+#screen-profiles.active,
+#screen-setup.active {
+  justify-content: center;
+}
+
+/* Large desktop: bigger content area and card sizes */
+@media (min-width: 1024px) and (min-height: 650px) {
+  .screen-inner      { max-width: 700px; }
+  .game-screen-inner { max-width: 840px; }
+  .target-board-2 { grid-template-columns: repeat(2, minmax(0, min(160px, 20svh))); }
+  .target-board-3 { grid-template-columns: repeat(3, minmax(0, min(140px, 17svh))); }
+  .target-board-4 { grid-template-columns: repeat(4, minmax(0, min(120px, 14svh))); }
+  .single-card    { width: min(250px, 30svh); }
+  .memory-card, .board-slot { font-size: clamp(1.4rem, 2.5vw, 2.4rem); }
+  .single-card    { font-size: clamp(2.2rem, 4vw, 3.4rem); }
+  .mz-logo        { font-size: clamp(2.6rem, 4vw, 3.6rem); }
+  .level-pill     { font-size: 1rem; padding: 14px 10px; }
+  .primary-btn    { font-size: 1.2rem; }
+}
 
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
